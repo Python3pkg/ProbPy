@@ -72,7 +72,7 @@ class Event:
         :param var: Variable which is checked.
         """
 
-        return var in self.event.keys()
+        return var in list(self.event.keys())
 
     def value(self, var):
         """
@@ -117,7 +117,7 @@ class Event:
 
         # Check if each variable is the same
         for i in self.event:
-            if i not in other_event.event.keys() or\
+            if i not in list(other_event.event.keys()) or\
                     self.event[i] != other_event.event[i]:
                 return False
 

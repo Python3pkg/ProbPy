@@ -17,7 +17,7 @@ class TestIndex:
         self.f_v1_v3 = Factor([self.v1, self.v3], list(range(1, 5)))
 
     def index_factor_test_0(self):
-        res_value = range(1, 5)
+        res_value = list(range(1, 5))
         for i, val in enumerate(self.f_v1_v2):
             assert(res_value[i] == val)
 

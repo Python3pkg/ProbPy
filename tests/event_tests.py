@@ -21,7 +21,7 @@ class TestEvent(TestBase):
         tlist = [(self.X, self.X.domain[0])]
         event = Event(tlist=tlist)
 
-        assert(len(event.event.keys()) == 1)
+        assert(len(list(event.event.keys())) == 1)
         assert(event.event[self.X] == self.X.domain[0])
 
     def eventConst_test_2(self):
@@ -35,7 +35,7 @@ class TestEvent(TestBase):
 
         event = Event(tlist=tlist)
 
-        assert(len(event.event.keys()) == 2)
+        assert(len(list(event.event.keys())) == 2)
 
         assert(event.event[self.X] == self.X.domain[0])
         assert(event.event[self.Y] == self.Y.domain[0])
@@ -47,7 +47,7 @@ class TestEvent(TestBase):
 
         event = Event(var=self.X, val=self.X.domain[0])
 
-        assert(len(event.event.keys()) == 1)
+        assert(len(list(event.event.keys())) == 1)
         assert(event.event[self.X] == self.X.domain[0])
 
     def eventVarInEvent_test_4(self):
@@ -77,7 +77,7 @@ class TestEvent(TestBase):
         event.setValue(self.X, self.X.domain[1])
         event.setValue(self.Y, self.Y.domain[1])
 
-        assert(len(event.event.keys()) == 2)
+        assert(len(list(event.event.keys())) == 2)
         assert(event.value(self.X) == self.X.domain[1])
         assert(event.value(self.Y) == self.Y.domain[1])
 

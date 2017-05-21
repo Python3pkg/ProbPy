@@ -7,6 +7,7 @@ from ProbPy import RandVar, Event
 
 import copy
 import math
+import collections
 
 
 class Factor:
@@ -70,7 +71,7 @@ class Factor:
         elif type(values) == int:
             self.values = [values]
 
-        elif callable(values):
+        elif isinstance(values, collections.Callable):
             self.values = self.makeValuesFromFunction(values)
 
         elif values is None:
@@ -340,7 +341,7 @@ class Factor:
         :returns:   Result of applying fun to the factors values
         """
 
-        map_res = map(fun, self.values)
+        map_res = list(map(fun, self.values))
         return Factor(self.rand_vars, list(map_res))
 
     def marginal(self, arg_rand_vars):

@@ -86,8 +86,8 @@ def ex1():
     explicit = 1 - entropy(Factor(Input, [p, 1-p]))
 
     print("Channel Capacity of a binary symmetric channel")
-    print("Blahut-Arimoto:", cc)
-    print("Explicit:      ", explicit)
+    print(("Blahut-Arimoto:", cc))
+    print(("Explicit:      ", explicit))
 
 
 def ex2():
@@ -99,7 +99,7 @@ def ex2():
     channel_dist = [random.random() for i in range(4)]
     Channel = Factor([Input, Output], channel_dist).normalize(Input)
 
-    print(ChannelCapacity(Input, Output, Prior, Channel))
+    print((ChannelCapacity(Input, Output, Prior, Channel)))
 
 
 def ex3():
@@ -111,7 +111,7 @@ def ex3():
     channel_dist = [random.random() for i in range(100)]
     Channel = Factor([Input, Output], channel_dist).normalize(Input)
 
-    print(ChannelCapacity(Input, Output, Prior, Channel))
+    print((ChannelCapacity(Input, Output, Prior, Channel)))
 
 
 if __name__ == "__main__":

@@ -37,11 +37,11 @@ class TestTextBook:
 
         for (qvar, qvalue, evidence, expect) in cases:
             result = SprinklerNW.eliminationAsk(qvar, evidence)
-            print("qvar: %s\nevidence: %s\nexpect: %s\nresult: %s" %
+            print(("qvar: %s\nevidence: %s\nexpect: %s\nresult: %s" %
                   (qvar.name,
                    ",".join(["%s=%s" % (x[0].name, x[1]) for x in evidence]),
                    expect,
-                   result.values[qvalue]))
+                   result.values[qvalue])))
             assert_almost_equal(result.values[qvalue], expect, places=3)
 
     def student_test_0(self):
@@ -88,9 +88,9 @@ class TestTextBook:
 
         for (qvar, qvalue, evidence, expect) in cases:
             result = StudentNW.eliminationAsk(qvar, evidence)
-            print("qvar: %s\nevidence: %s\nexpect: %s\nresult: %s" %
+            print(("qvar: %s\nevidence: %s\nexpect: %s\nresult: %s" %
                   (qvar.name,
                    ",".join(["%s=%s" % (x[0].name, x[1]) for x in evidence]),
                    expect,
-                   result.values[qvalue]))
+                   result.values[qvalue])))
             assert_almost_equal(result.values[qvalue], expect, places=3)

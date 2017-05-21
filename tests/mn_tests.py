@@ -75,7 +75,7 @@ class TestMarkovNetwork:
             bf_res = bf.marginal(i).normalize()
             mn_res = MN.var_nodes[i.name].marginal
             dist = bf_res.euclideanDist(mn_res)
-            print(bf_res, mn_res, dist)
+            print((bf_res, mn_res, dist))
             if tree:
                 assert(dist < self.ep_tree_res)
             else:
@@ -86,7 +86,7 @@ class TestMarkovNetwork:
             f1 = net1.var_nodes[i].marginal
             f2 = net2.var_nodes[i].marginal
             dist = f1.euclideanDist(f2)
-            print(f1, f2, dist)
+            print((f1, f2, dist))
             if tree:
                 assert(dist < self.ep_tree_res)
             else:
